@@ -10,14 +10,6 @@
 # Description: OpenWrt DIY script part 1 (Before Update feeds)
 #
 
-# drop mosdns and v2ray-geodata packages that come with the source
-find ./ | grep Makefile | grep v2ray-geodata | xargs rm -f
-find ./ | grep Makefile | grep mosdns | xargs rm -f
-
-git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
-git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
-make menuconfig # choose LUCI -> Applications -> luci-app-mosdns
-make package/mosdns/luci-app-mosdns/compile V=s
 
 
 #sed -i 's/KERNEL_PATCHVER:=5.15/KERNEL_PATCHVER:=5.10/g' ./target/linux/x86/Makefile
@@ -26,7 +18,7 @@ make package/mosdns/luci-app-mosdns/compile V=s
 git clone https://github.com/WukongMaster/luci-app-poweroff.git package/luci-app-poweroff
 
 # 2-添加 Mosdns 插件
-# git clone --depth=1 https://github.com/sbwml/luci-app-mosdns package/luci-app-mosdns
+git clone --depth=1 https://github.com/sbwml/luci-app-mosdns package/lean/luci-app-mosdns
 
 # 3-添加 Openclash 插件
 wget -O package/openclash.zip https://codeload.github.com/vernesong/OpenClash/zip/refs/heads/master
