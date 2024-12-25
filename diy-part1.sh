@@ -10,8 +10,8 @@
 # Description: OpenWrt DIY script part 1 (Before Update feeds)
 #
 # 移除要替换的包
-rm -rf feeds/packages/net/mosdns
-rm -rf feeds/luci/applications/luci-app-mosdns
+# rm -rf feeds/packages/net/mosdns
+# rm -rf feeds/luci/applications/luci-app-mosdns
 
 
 
@@ -22,7 +22,16 @@ rm -rf feeds/luci/applications/luci-app-mosdns
 git clone https://github.com/WukongMaster/luci-app-poweroff.git package/luci-app-poweroff
 
 # 2-添加 Mosdns 插件
-git clone https://github.com/sbwml/luci-app-mosdns.git package/lean/luci-app-mosdns
+# git clone https://github.com/sbwml/luci-app-mosdns.git package/lean/luci-app-mosdns
+
+# remove v2ray-geodata package from feeds (openwrt-22.03 & master)
+rm -rf feeds/packages/net/v2ray-geodata
+
+git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
+git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
+make menuconfig # choose LUCI -> Applications -> luci-app-mosdns
+make package/mosdns/luci-app-mosdns/compile V=s
+
 
 # 3-添加 Openclash 插件
 wget -O package/openclash.zip https://codeload.github.com/vernesong/OpenClash/zip/refs/heads/master
