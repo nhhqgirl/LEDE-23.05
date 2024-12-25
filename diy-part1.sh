@@ -22,7 +22,7 @@ rm -rf feeds/luci/applications/luci-app-mosdns
 git clone https://github.com/WukongMaster/luci-app-poweroff.git package/luci-app-poweroff
 
 # 2-添加 Mosdns 插件
-git clone https://github.com/sbwml/luci-app-mosdns packages/luci-app-mosdns
+git clone https://github.com/sbwml/luci-app-mosdns.git package/lean/luci-app-mosdns
 
 # 3-添加 Openclash 插件
 wget -O package/openclash.zip https://codeload.github.com/vernesong/OpenClash/zip/refs/heads/master
