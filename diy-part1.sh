@@ -12,16 +12,20 @@
 
 #sed -i 's/KERNEL_PATCHVER:=5.15/KERNEL_PATCHVER:=5.10/g' ./target/linux/x86/Makefile
 
+# 1-添加 PowerOff 插件
+git clone https://github.com/WukongMaster/luci-app-poweroff.git package/luci-app-poweroff
 
-# 替换argon
-git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon
+# 2-添加 Mosdns 插件
+git clone --depth=1 https://github.com/sbwml/luci-app-mosdns package/luci-app-mosdns
+
+# 3-添加 Openclash 插件
+wget -O package/openclash.zip https://codeload.github.com/vernesong/OpenClash/zip/refs/heads/master
+unzip -d package/openclash package/openclash.zip
+cp -r package/openclash/OpenClash-master/luci-app-openclash package/lean/luci-app-openclash
+rm -rf package/openclash package/openclash.zip
+
+# 3-添加 argon 主题
+rm -rf feeds/luci/themes/luci-theme-argon
+git clone https://github.com/jerrykuku/luci-theme-argon.git feeds/luci/themes/luci-theme-argon
 
 
-# 在线用户
-# svn export https://github.com/haiibo/packages/trunk/luci-app-onliner package/luci-app-onliner
-git clone https://github.com/haiibo/packages
-mv packages/luci-app-onliner package
-rm -rf packages
-sed -i '$i uci set nlbwmon.@nlbwmon[0].refresh_interval=2s' package/lean/default-settings/files/zzz-default-settings
-sed -i '$i uci commit nlbwmon' package/lean/default-settings/files/zzz-default-settings
-chmod 755 package/luci-app-onliner/root/usr/share/onliner/setnlbw.sh
