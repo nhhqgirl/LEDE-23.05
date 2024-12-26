@@ -12,6 +12,7 @@
 # 移除要替换的包
 rm -rf feeds/packages/net/mosdns
 rm -rf feeds/luci/applications/luci-app-mosdns
+rm -rf feeds/luci/themes/luci-theme-argon
 
 #sed -i 's/KERNEL_PATCHVER:=5.15/KERNEL_PATCHVER:=5.10/g' ./target/linux/x86/Makefile
 
@@ -28,7 +29,4 @@ cp -r package/openclash/OpenClash-master/luci-app-openclash package/lean/luci-ap
 rm -rf package/openclash package/openclash.zip
 
 # 3-添加 argon 主题
-rm -rf feeds/luci/themes/luci-theme-argon
-git clone https://github.com/jerrykuku/luci-theme-argon.git feeds/luci/themes/luci-theme-argon
-
-
+git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git feeds/luci/themes/luci-theme-argon
