@@ -10,6 +10,7 @@
 # Description: OpenWrt DIY script part 1 (Before Update feeds)
 #
 # 移除要替换的包
+rm -rf feeds/packages/lang/golang
 rm -rf feeds/packages/net/mosdns
 rm -rf feeds/luci/applications/luci-app-mosdns
 rm -rf feeds/luci/themes/luci-theme-argon
