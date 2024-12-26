@@ -27,4 +27,4 @@ cp -r package/openclash/OpenClash-master/luci-app-openclash package/lean/luci-ap
 rm -rf package/openclash package/openclash.zip
 
 # 4-添加 argon 主题
-git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git feeds/luci/themes/luci-theme-argon
+git clone https://github.com/sbwml/luci-theme-argon.git feeds/luci/themes/luci-theme-argon
