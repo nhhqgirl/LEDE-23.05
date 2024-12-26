@@ -11,6 +11,7 @@
 #
 
 # 修复golang版本过低
+rm -rf feeds/packages/lang/golang
 git clone https://github.com/sbwml/packages_lang_golang -b 23.x feeds/packages/lang/golang
 
 # 修改网络设置
