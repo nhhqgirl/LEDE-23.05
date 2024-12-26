@@ -10,12 +10,6 @@
 # Description: OpenWrt DIY script part 2 (After Update feeds)
 #
 
-# 清理旧包
-rm -rf feeds/luci/themes/luci-theme-argon
-rm -rf feeds/luci/themes/luci-theme-argon-mod
-rm -rf feeds/packages/net/mosdns
-rm -rf feeds/luci/applications/luci-app-mosdns
-rm -rf feeds/luci/applications/luci-app-openclash
 
 # 修改网络设置
 sed -i 's/192.168.1.1/192.168.81.1/g' package/base-files/files/bin/config_generate
