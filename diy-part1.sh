@@ -10,16 +10,22 @@
 # Description: OpenWrt DIY script part 1 (Before Update feeds)
 #
 
-#sed -i 's/KERNEL_PATCHVER:=5.15/KERNEL_PATCHVER:=5.10/g' ./target/linux/x86/Makefile
+# 移除要替换的包
+rm -rf feeds/packages/net/mosdns
+rm -rf feeds/luci/applications/luci-app-mosdns
+rm -rf feeds/luci/themes/luci-theme-argon
 
-rm -rf feeds/smpackage/{base-files,dnsmasq,firewall*,fullconenat,libnftnl,nftables,ppp,opkg,ucl,upx,vsftpd*,miniupnpd-iptables,wireless-regdb}
+# 1-添加 PowerOff 插件
+git clone https://github.com/WukongMaster/luci-app-poweroff.git package/luci-app-poweroff
 
+# 2-添加 Mosdns 插件
+# git clone https://github.com/sbwml/luci-app-mosdns.git package/lean/luci-app-mosdns
 
-# 在线用户
-# svn export https://github.com/haiibo/packages/trunk/luci-app-onliner package/luci-app-onliner
-git clone https://github.com/haiibo/packages
-mv packages/luci-app-onliner package
-rm -rf packages
-sed -i '$i uci set nlbwmon.@nlbwmon[0].refresh_interval=2s' package/lean/default-settings/files/zzz-default-settings
-sed -i '$i uci commit nlbwmon' package/lean/default-settings/files/zzz-default-settings
-chmod 755 package/luci-app-onliner/root/usr/share/onliner/setnlbw.sh
+# 3-添加 Openclash 插件
+wget -O package/openclash.zip https://codeload.github.com/vernesong/OpenClash/zip/refs/heads/master
+unzip -d package/openclash package/openclash.zip
+cp -r package/openclash/OpenClash-master/luci-app-openclash package/lean/luci-app-openclash
+rm -rf package/openclash package/openclash.zip
+
+# 4-添加 argon 主题
+git clone https://github.com/DHDAXCW/luci/themes/luci-theme-argon.git feeds/luci/themes/luci-theme-argon
