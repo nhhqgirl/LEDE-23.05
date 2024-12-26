@@ -17,7 +17,7 @@ git clone https://github.com/sbwml/packages_lang_golang -b 23.x feeds/packages/l
 sed -i 's/192.168.1.1/192.168.81.1/g' package/base-files/files/bin/config_generate
 
 # 修改默认主题
-sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
+# sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
 
 # 在线用户
 # svn export https://github.com/haiibo/packages/trunk/luci-app-onliner package/luci-app-onliner
