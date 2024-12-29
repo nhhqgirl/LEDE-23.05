@@ -17,7 +17,7 @@ rm -rf feeds/luci/themes/luci-theme-argon
 
 
 
-sed -i '$a src-git leran https://github.com/gxnas/OpenWrt_Build_x64_Packages' feeds.conf.default
+sed -i '$a src-git leran https://github.com/217heidai/OpenWrt-Packages' feeds.conf.default
 
 
 
@@ -30,10 +30,10 @@ sed -i '$a src-git leran https://github.com/gxnas/OpenWrt_Build_x64_Packages' fe
 # git clone https://github.com/sbwml/luci-app-mosdns.git package/lean/luci-app-mosdns
 
 # 3-添加 Openclash 插件
-# wget -O package/openclash.zip https://codeload.github.com/vernesong/OpenClash/zip/refs/heads/master
-# unzip -d package/openclash package/openclash.zip
-# cp -r package/openclash/OpenClash-master/luci-app-openclash package/lean/luci-app-openclash
-# rm -rf package/openclash package/openclash.zip
+wget -O package/openclash.zip https://codeload.github.com/vernesong/OpenClash/zip/refs/heads/master
+unzip -d package/openclash package/openclash.zip
+cp -r package/openclash/OpenClash-master/luci-app-openclash package/lean/luci-app-openclash
+rm -rf package/openclash package/openclash.zip
 
 # 4-添加 argon 主题
 # git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git feeds/luci/themes/luci-theme-argon
