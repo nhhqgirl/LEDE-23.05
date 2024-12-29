@@ -15,9 +15,9 @@ rm -rf feeds/packages/net/mosdns
 rm -rf feeds/luci/applications/luci-app-mosdns
 rm -rf feeds/luci/themes/luci-theme-argon
 
-rm -rf feeds/smpackage/{base-files,dnsmasq,firewall*,fullconenat,libnftnl,nftables,ppp,opkg,ucl,upx,vsftpd*,miniupnpd-iptables,wireless-regdb}
 
-sed -i '$a src-git smpackage https://github.com/kenzok8/small-package' feeds.conf.default
+
+sed -i '$a src-git leran https://github.com/gxnas/OpenWrt_Build_x64_Packages' feeds.conf.default
 
 
 
