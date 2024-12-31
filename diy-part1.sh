@@ -11,7 +11,7 @@
 #
 
 # 1-添加 PowerOff 插件
-git clone https://github.com/WukongMaster/luci-app-poweroff.git package/luci-app-poweroff
+git clone https://github.com/nhyoungboy/luci-app-poweroff.git package/luci-app-poweroff
 
 # 2-添加 Mosdns 插件
 rm -rf feeds/packages/lang/golang
@@ -26,7 +26,7 @@ cp -r package/openclash/OpenClash-master/luci-app-openclash package/lean/luci-ap
 rm -rf package/openclash package/openclash.zip
 
 # 4-添加 onliner 插件
-sed -i '$a src-git onliner https://github.com/danchexiaoyang/luci-app-onliner' feeds.conf.default
+sed -i '$a src-git onliner https://github.com/nhyoungboy/luci-app-onliner' feeds.conf.default
 
 # 5-添加  主题
 # rm -rf feeds/luci/themes/luci-theme-argon
