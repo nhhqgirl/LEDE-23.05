@@ -25,12 +25,11 @@ unzip -d package/openclash package/openclash.zip
 cp -r package/openclash/OpenClash-master/luci-app-openclash package/lean/luci-app-openclash
 rm -rf package/openclash package/openclash.zip
 
-# 4-添加 argon 主题
+# 4-添加 onliner 插件
+sed -i '$a src-git onliner https://github.com/danchexiaoyang/luci-app-onliner' feeds.conf.default
+
+# 5-添加 argon 主题
 rm -rf feeds/luci/themes/luci-theme-argon
 git clone https://github.com/sbwml/luci-theme-argon.git feeds/luci/themes/luci-theme-argon
 
-# 5-添加 samba4 插件
-rm -rf feeds/packages/libs/liburing
-git clone https://github.com/sbwml/feeds_packages_libs_liburing feeds/packages/libs/liburing
-rm -rf feeds/packages/net/samba4
-git clone https://github.com/sbwml/feeds_packages_net_samba4 feeds/packages/net/samba4
+
