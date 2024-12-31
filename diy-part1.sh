@@ -31,6 +31,6 @@ sed -i '$a src-git onliner https://github.com/danchexiaoyang/luci-app-onliner' f
 # 5-添加  主题
 # rm -rf feeds/luci/themes/luci-theme-argon
 # git clone https://github.com/sbwml/luci-theme-argon.git feeds/luci/themes/luci-theme-argon
-git clone --depth=1 https://github.com/Leo-Jo-My/luci-theme-opentomcat.git package/luci-theme-opentomcat
+git clone --depth=1 https://github.com/nhyoungboy/luci-theme-opentomcat.git package/luci-theme-opentomcat
 
 
