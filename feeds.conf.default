@@ -12,3 +12,4 @@ src-git telephony https://git.openwrt.org/feed/telephony.git
 #src-git kenzo https://github.com/kenzok8/openwrt-packages
 #src-git small https://github.com/kenzok8/small
 #src-git mosdns https://github.com/sbwml/luci-app-mosdns
+src-git leran https://github.com/217heidai/OpenWrt-Packages
