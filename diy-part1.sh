@@ -9,7 +9,7 @@
 # File name: diy-part1.sh
 # Description: OpenWrt DIY script part 1 (Before Update feeds)
 #
-
+sed -i '$a src-git gxnas https://github.com/gxnas/OpenWrt_Build_x64_Packages' feeds.conf.default
 # 移除要替换的包
 rm -rf feeds/packages/lang/golang
 rm -rf feeds/packages/net/mosdns
@@ -21,7 +21,6 @@ rm -rf package/feeds/gxnas/luci-app-dogcom
 
 git clone https://github.com/sbwml/packages_lang_golang -b 23.x feeds/packages/lang/golang
 
-sed -i '$a src-git gxnas https://github.com/gxnas/OpenWrt_Build_x64_Packages' feeds.conf.default
 
 
 
