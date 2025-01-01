@@ -16,7 +16,8 @@ rm -rf feeds/packages/net/mosdns
 rm -rf feeds/luci/applications/luci-app-mosdns
 rm -rf feeds/luci/applications/luci-app-docker
 rm -rf feeds/luci/applications/luci-app-dockerman
-
+rm -rf package/feeds/gxnas/natflow
+rm -rf package/feeds/gxnas/luci-app-dogcom
 
 git clone https://github.com/sbwml/packages_lang_golang -b 23.x feeds/packages/lang/golang
 
