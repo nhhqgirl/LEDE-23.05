@@ -10,10 +10,13 @@
 # Description: OpenWrt DIY script part 1 (Before Update feeds)
 #
 
+sed -i '$a src-git get https://github.com/217heidai/OpenWrt-Packages' feeds.conf.default
+
 # 1-添加 Mosdns 插件
 rm -rf feeds/packages/net/mosdns
 rm -rf feeds/luci/applications/luci-app-mosdns
-git clone https://github.com/sbwml/luci-app-mosdns package/luci-app-mosdns
+
+
 
 # 2-添加 Openclash 插件
 wget -O package/openclash.zip https://codeload.github.com/vernesong/OpenClash/zip/refs/heads/master
