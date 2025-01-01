@@ -10,8 +10,6 @@
 # Description: OpenWrt DIY script part 2 (After Update feeds)
 #
 
-# 修复golang版本过低
-git clone https://github.com/sbwml/packages_lang_golang -b 23.x feeds/packages/lang/golang
 
 # 修改网络设置
 sed -i 's/192.168.1.1/192.168.81.1/g' package/base-files/files/bin/config_generate
