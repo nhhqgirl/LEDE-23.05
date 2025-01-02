@@ -11,9 +11,11 @@
 #
 
 rm -rf feeds/xuanranran/luci-app-openclash
+rm -rf feeds/luci/applications/luci-app-openclash
 rm -rf feeds/luci/applications/luci-app-mosdns
 rm -rf feeds/packages/net/mosdns
-rm -rf feeds/luci/applications/luci-app-openclash
+rm -rf feeds/luci/themes/luci-theme-argon
+
 
 
 # Update golang 1.23.x
