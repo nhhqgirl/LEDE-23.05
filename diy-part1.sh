@@ -9,23 +9,10 @@
 # File name: diy-part1.sh
 # Description: OpenWrt DIY script part 1 (Before Update feeds)
 #
-sed -i '$a src-git NueXini https://github.com/NueXini/NueXini_Packages' feeds.conf.default
-# 移除要替换的包
-rm -rf feeds/packages/lang/golang
-rm -rf feeds/packages/net/mosdns
-rm -rf feeds/luci/applications/luci-app-mosdns
-rm -rf feeds/luci/applications/luci-app-docker
-rm -rf feeds/luci/applications/luci-app-dockerman
-
-
-git clone https://github.com/sbwml/packages_lang_golang -b 23.x feeds/packages/lang/golang
-
-
-
 
  
 # 1-添加 PowerOff 插件
-git clone https://github.com/nhyoungboy/luci-app-poweroff.git package/luci-app-poweroff
+# git clone https://github.com/nhyoungboy/luci-app-poweroff.git package/luci-app-poweroff
 
 # 2-添加 Mosdns 插件
 # rm -rf feeds/packages/lang/golang
@@ -40,7 +27,7 @@ git clone https://github.com/nhyoungboy/luci-app-poweroff.git package/luci-app-p
 # rm -rf package/openclash package/openclash.zip
 
 # 4-添加 onliner 插件
-sed -i '$a src-git onliner https://github.com/nhyoungboy/luci-app-onliner' feeds.conf.default
+# sed -i '$a src-git onliner https://github.com/nhyoungboy/luci-app-onliner' feeds.conf.default
 
 # 5-添加  主题
 # rm -rf feeds/luci/themes/luci-theme-argon
