@@ -10,12 +10,13 @@
 # Description: OpenWrt DIY script part 1 (Before Update feeds)
 #
 
-
-
+rm -rf feeds/luci/themes/luci-theme-argon
+rm -rf feeds/packages/net/mosdns
+rm -rf feeds/luci/applications/luci-app-mosdns
 rm -rf package/lean/{*ddns-scripts_aliyun,ddns-scripts_dnspod}
-rm -rf customfeeds/luci/applications/{luci-app-filebrowser,luci-app-argon-config}
-rm -rf customfeeds/luci/themes/luci-theme-argon
-rm -rf customfeeds/packages/net/{*alist,chinadns-ng,dns2socks,dns2tcp,lucky,sing-box}
+rm -rf feeds/luci/applications/{luci-app-filebrowser,luci-app-argon-config}
+rm -rf feeds/luci/themes/luci-theme-argon
+rm -rf feeds/packages/net/{*alist,chinadns-ng,dns2socks,dns2tcp,lucky,sing-box}
 
 
 
@@ -24,7 +25,6 @@ rm -rf customfeeds/packages/net/{*alist,chinadns-ng,dns2socks,dns2tcp,lucky,sing
 # git clone https://github.com/nhyoungboy/luci-app-poweroff.git package/luci-app-poweroff
 
 # 2-添加 Mosdns 插件
-# rm -rf feeds/packages/lang/golang
 # rm -rf feeds/packages/net/mosdns
 # rm -rf feeds/luci/applications/luci-app-mosdns
 # git clone https://github.com/sbwml/luci-app-mosdns.git package/lean/luci-app-mosdns
