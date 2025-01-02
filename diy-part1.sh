@@ -10,17 +10,15 @@
 # Description: OpenWrt DIY script part 1 (Before Update feeds)
 #
 
-rm -rf feeds/xuanranran/luci-app-openclash
-rm -rf feeds/luci/applications/luci-app-openclash
-rm -rf feeds/luci/applications/luci-app-mosdns
-rm -rf feeds/packages/net/mosdns
-rm -rf feeds/luci/themes/luci-theme-argon
+
+
+rm -rf package/lean/{*ddns-scripts_aliyun,ddns-scripts_dnspod}
+rm -rf customfeeds/luci/applications/{luci-app-filebrowser,luci-app-argon-config}
+rm -rf customfeeds/luci/themes/luci-theme-argon
+rm -rf customfeeds/packages/net/{*alist,chinadns-ng,dns2socks,dns2tcp,lucky,sing-box}
 
 
 
-# Update golang 1.23.x
-rm -rf feeds/packages/lang/golang/golang
-git clone https://github.com/sbwml/packages_lang_golang feeds/packages/lang/golang/golang
  
 # 1-添加 PowerOff 插件
 # git clone https://github.com/nhyoungboy/luci-app-poweroff.git package/luci-app-poweroff
