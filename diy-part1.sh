@@ -12,10 +12,24 @@
 
 # 移除旧包
 rm -rf feeds/packages/net/mosdns
-rm -rf feeds/luci/applications/luci-app-dockerman
 rm -rf feeds/luci/applications/luci-app-mosdns
+rm -rf feeds/luci/applications/luci-app-dockerman
+
+
+
+
+# 添加 Openclash 插件
 rm -rf feeds/rely/luci-app-openclash
 rm -rf feeds/xuanranran/luci-app-openclash
+rm -rf feeds/luci/applications/luci-app-openclash
+wget -O package/openclash.zip https://codeload.github.com/vernesong/OpenClash/zip/refs/heads/master
+unzip -d package/openclash package/openclash.zip
+cp -r package/openclash/OpenClash-master/luci-app-openclash package/luci-app-openclash
+rm -rf package/openclash package/openclash.zip
+
+# 添加 PowerOff 插件
+rm -rf feeds/xuanranran/luci-app-poweroff
+git clone https://github.com/nhyoungboy/luci-app-poweroff.git package/luci-app-poweroff
 
 # unzip
 rm -rf feeds/packages/utils/unzip
@@ -63,9 +77,7 @@ popd
 rm -rf feeds/packages/lang/golang/golang
 git clone https://github.com/sbwml/packages_lang_golang feeds/packages/lang/golang/golang
  
-# 添加 PowerOff 插件
-rm -rf feeds/xuanranran/luci-app-poweroff
-git clone https://github.com/nhyoungboy/luci-app-poweroff.git package/luci-app-poweroff
+
 
 
 
