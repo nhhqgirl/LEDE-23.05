@@ -28,8 +28,8 @@ cp -r package/openclash/OpenClash-master/luci-app-openclash package/luci-app-ope
 rm -rf package/openclash package/openclash.zip
 
 # 添加 PowerOff 插件
-rm -rf feeds/xuanranran/luci-app-poweroff
-git clone https://github.com/nhyoungboy/luci-app-poweroff.git package/luci-app-poweroff
+# rm -rf feeds/xuanranran/luci-app-poweroff
+# git clone https://github.com/nhyoungboy/luci-app-poweroff.git package/luci-app-poweroff
 
 # unzip
 rm -rf feeds/packages/utils/unzip
