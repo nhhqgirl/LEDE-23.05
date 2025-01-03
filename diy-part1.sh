@@ -10,11 +10,13 @@
 # Description: OpenWrt DIY script part 1 (Before Update feeds)
 #
 
-sed -i '$a src-git get https://github.com/217heidai/OpenWrt-Packages' feeds.conf.default
+sed -i '$a src-git xuanranran https://github.com/xuanranran/openwrt-packages' feeds.conf.default
+sed -i '$a src-git rely https://github.com/xuanranran/rely' feeds.conf.default
 
-# 1-添加 Mosdns 插件
+# 移除旧包
 rm -rf feeds/packages/net/mosdns
 rm -rf feeds/luci/applications/luci-app-mosdns
+rm -rf feeds/luci/applications/luci-app-dockerman
 
 
 
@@ -28,7 +30,7 @@ rm -rf package/openclash package/openclash.zip
 git clone https://github.com/nhyoungboy/luci-app-poweroff.git package/luci-app-poweroff
 
 # 4-添加 onliner 插件
-sed -i '$a src-git onliner https://github.com/nhyoungboy/luci-app-onliner' feeds.conf.default
+# sed -i '$a src-git onliner https://github.com/nhyoungboy/luci-app-onliner' feeds.conf.default
 
 
 # 5-添加 opentomcat 主题
