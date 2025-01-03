@@ -28,7 +28,8 @@ cp -r package/openclash/OpenClash-master/luci-app-openclash package/luci-app-ope
 rm -rf package/openclash package/openclash.zip
 
 # 4-添加 onliner 插件
-# sed -i '$a src-git onliner https://github.com/nhyoungboy/luci-app-onliner' feeds.conf.default
+rm -rf feeds/xuanranran/luci-app-onliner
+sed -i '$a src-git onliner https://github.com/nhyoungboy/luci-app-onliner' feeds.conf.default
 
 
 # 5-添加 opentomcat 主题
