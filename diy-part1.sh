@@ -10,8 +10,6 @@
 # Description: OpenWrt DIY script part 1 (Before Update feeds)
 #
 
-sed -i '$a src-git xuanranran https://github.com/xuanranran/openwrt-packages' feeds.conf.default
-sed -i '$a src-git rely https://github.com/xuanranran/rely' feeds.conf.default
 
 # 移除旧包
 rm -rf feeds/xuanranran/luci-app-onliner
