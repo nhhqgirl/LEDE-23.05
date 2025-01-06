@@ -13,7 +13,6 @@
 # 移除旧包
 rm -rf feeds/packages/net/mosdns
 rm -rf feeds/luci/applications/luci-app-mosdns
-# rm -rf feeds/luci/applications/luci-app-dockerman
 rm -rf feeds/luci/applications/luci-app-openclash
 
 # 修改网络设置
