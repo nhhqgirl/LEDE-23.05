@@ -12,7 +12,7 @@
 
 
 # 移除旧包
-rm -rf feeds/xuanranran/luci-app-onliner
+rm -rf feeds/xuanranran/luci-app-poweroff
 rm -rf feeds/packages/net/mosdns
 rm -rf feeds/luci/applications/luci-app-mosdns
 rm -rf feeds/luci/applications/luci-app-dockerman
