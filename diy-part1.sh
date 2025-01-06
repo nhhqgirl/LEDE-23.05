@@ -12,13 +12,13 @@
 
 
 # 移除旧包
-rm -rf feeds/xuanranran/luci-app-onliner
-rm -rf feeds/xuanranran/luci-app-poweroff
+# rm -rf feeds/xuanranran/luci-app-onliner
+# rm -rf feeds/xuanranran/luci-app-poweroff
 rm -rf feeds/packages/net/mosdns
 rm -rf feeds/luci/applications/luci-app-mosdns
-rm -rf feeds/luci/applications/luci-app-dockerman
-rm -rf feeds/rely/luci-app-openclash
-rm -rf feeds/xuanranran/luci-app-openclash
+# rm -rf feeds/luci/applications/luci-app-dockerman
+# rm -rf feeds/rely/luci-app-openclash
+# rm -rf feeds/xuanranran/luci-app-openclash
 rm -rf feeds/luci/applications/luci-app-openclash
 
 # 添加 Openclash 插件
@@ -32,7 +32,7 @@ rm -f package/openclash.zip
 # sed -i '$a src-git onliner https://github.com/nhhqgirl/luci-app-onliner' feeds.conf.default
 git clone https://github.com/nhhqgirl/luci-app-onliner.git package/lean/luci-app-onliner
 
-# 3-添加 PowerOff 插件
+# 添加 PowerOff 插件
 git clone https://github.com/nhhqgirl/luci-app-poweroff.git package/lean/luci-app-poweroff
 
 # 添加 opentomcat 主题
