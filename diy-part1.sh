@@ -28,7 +28,7 @@ cp -r package/openclash/OpenClash-master/luci-app-openclash package/luci-app-ope
 rm -rf package/openclash package/openclash.zip
 
 # 添加 onliner 插件
-sed -i '$a src-git onliner https://github.com/nhyoungboy/luci-app-onliner' feeds.conf.default
+sed -i '$a src-git onliner https://github.com/nhhqgirl/luci-app-onliner' feeds.conf.default
 
 # 3-添加 PowerOff 插件
 git clone https://github.com/nhhqgirl/luci-app-poweroff.git package/luci-app-poweroff
