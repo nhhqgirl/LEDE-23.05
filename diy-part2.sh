@@ -10,20 +10,17 @@
 # Description: OpenWrt DIY script part 2 (After Update feeds)
 #
 
+# 移除旧包
+
+rm -rf feeds/packages/net/mosdns
+rm -rf feeds/luci/applications/luci-app-mosdns
+# rm -rf feeds/luci/applications/luci-app-dockerman
+rm -rf feeds/luci/applications/luci-app-openclash
 
 # 修改网络设置
 sed -i 's/192.168.1.1/192.168.81.1/g' package/base-files/files/bin/config_generate
 sed -i 's/192.168.1.1/192.168.81.1/g' package/base-files/luci2/bin/config_generate
 
-# 移除旧包
-# rm -rf feeds/xuanranran/luci-app-onliner
-# rm -rf feeds/xuanranran/luci-app-poweroff
-rm -rf feeds/packages/net/mosdns
-rm -rf feeds/luci/applications/luci-app-mosdns
-# rm -rf feeds/luci/applications/luci-app-dockerman
-# rm -rf feeds/rely/luci-app-openclash
-# rm -rf feeds/xuanranran/luci-app-openclash
-rm -rf feeds/luci/applications/luci-app-openclash
 
 # Change default theme
 sed -i 's#luci-theme-bootstrap#luci-theme-opentomcat#g' feeds/luci/collections/luci/Makefile
