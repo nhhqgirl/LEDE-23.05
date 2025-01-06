@@ -9,16 +9,9 @@
 # File name: diy-part1.sh
 # Description: OpenWrt DIY script part 1 (Before Update feeds)
 #
-
-
 # 移除旧包
-# rm -rf feeds/xuanranran/luci-app-onliner
-# rm -rf feeds/xuanranran/luci-app-poweroff
 rm -rf feeds/packages/net/mosdns
 rm -rf feeds/luci/applications/luci-app-mosdns
-# rm -rf feeds/luci/applications/luci-app-dockerman
-# rm -rf feeds/rely/luci-app-openclash
-# rm -rf feeds/xuanranran/luci-app-openclash
 rm -rf feeds/luci/applications/luci-app-openclash
 
 # 添加 Openclash 插件
@@ -29,7 +22,6 @@ rm -rf package/openclash
 rm -f package/openclash.zip
 
 # 添加 onliner 插件
-# sed -i '$a src-git onliner https://github.com/nhhqgirl/luci-app-onliner' feeds.conf.default
 git clone https://github.com/nhhqgirl/luci-app-onliner.git package/lean/luci-app-onliner
 
 # 添加 PowerOff 插件
