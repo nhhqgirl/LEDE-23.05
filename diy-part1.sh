@@ -9,12 +9,9 @@
 # File name: diy-part1.sh
 # Description: OpenWrt DIY script part 1 (Before Update feeds)
 #
-# 移除旧包
-rm -rf feeds/packages/net/mosdns
-rm -rf feeds/luci/applications/luci-app-mosdns
-rm -rf feeds/luci/applications/luci-app-openclash
 
 # 添加 Openclash 插件
+rm -rf feeds/luci/applications/luci-app-openclash
 wget -O package/openclash.zip https://codeload.github.com/vernesong/OpenClash/zip/refs/heads/master
 unzip -d package/openclash package/openclash.zip
 cp -r package/openclash/OpenClash-master/luci-app-openclash package/lean/luci-app-openclash
