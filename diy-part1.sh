@@ -11,6 +11,7 @@
 #
 
 rm -rf feeds/luci/applications/luci-app-mosdns 
+rm -rf feeds/packages/net/mosdns
 
 
 # 添加 Openclash 插件
