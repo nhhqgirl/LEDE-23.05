@@ -10,13 +10,6 @@
 # Description: OpenWrt DIY script part 1 (Before Update feeds)
 #
 
-rm -rf feeds/packages/lang/golang
-git clone https://github.com/sbwml/packages_lang_golang -b 23.x feeds/packages/lang/golang
-
-rm -rf feeds/luci/applications/luci-app-mosdns 
-rm -rf feeds/packages/net/mosdns
-
-
 # 添加 Openclash 插件
 rm -rf feeds/luci/applications/luci-app-openclash
 wget -O package/openclash.zip https://codeload.github.com/vernesong/OpenClash/zip/refs/heads/master
