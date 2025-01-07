@@ -10,8 +10,6 @@
 # Description: OpenWrt DIY script part 2 (After Update feeds)
 #
 
-rm -rf feeds/luci/applications/luci-app-mosdns 
-rm -rf feeds/packages/net/mosdns
 
 # 修改网络设置
 sed -i 's/192.168.1.1/192.168.81.1/g' package/base-files/files/bin/config_generate
