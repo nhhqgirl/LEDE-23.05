@@ -22,9 +22,9 @@ rm -f package/openclash.zip
 git clone https://github.com/nhhqgirl/luci-app-onliner.git package/lean/luci-app-onliner
 
 # 添加 mosdns 插件
-git clone https://github.com/nhhqgirl/luci-app-mosdns.git package/lean/luci-app-mosdns
-git clone https://github.com/nhhqgirl/mosdns.git package/lean/mosdns
-git clone https://github.com/nhhqgirl/v2dat.git package/lean/v2dat
+# git clone https://github.com/nhhqgirl/luci-app-mosdns.git package/lean/luci-app-mosdns
+# git clone https://github.com/nhhqgirl/mosdns.git package/lean/mosdns
+# git clone https://github.com/nhhqgirl/v2dat.git package/lean/v2dat
 
 
 # 添加 PowerOff 插件
