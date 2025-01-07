@@ -11,7 +11,7 @@
 #
 
 rm -rf feeds/luci/applications/luci-app-mosdns 
-rm -rf feeds/packages/net/mosdns 
+
 
 # 添加 Openclash 插件
 rm -rf feeds/luci/applications/luci-app-openclash
@@ -26,7 +26,6 @@ git clone https://github.com/nhhqgirl/luci-app-onliner.git package/lean/luci-app
 
 # 添加 mosdns 插件
 git clone https://github.com/nhhqgirl/luci-app-mosdns.git package/lean/luci-app-mosdns
-git clone https://github.com/nhhqgirl/mosdns.git package/lean/mosdns
 git clone https://github.com/nhhqgirl/v2dat.git package/lean/v2dat
 
 
