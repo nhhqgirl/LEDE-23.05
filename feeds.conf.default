@@ -11,7 +11,7 @@ src-git telephony https://git.openwrt.org/feed/telephony.git
 #src-link custom /usr/src/openwrt/custom-feed
 #src-git kenzo https://github.com/kenzok8/openwrt-packages
 #src-git small https://github.com/kenzok8/small
-src-git QiuSimons https://github.com/QiuSimons/openwrt-mos
+#src-git QiuSimons https://github.com/QiuSimons/openwrt-mos
 #src-git sbwml https://github.com/sbwml/luci-app-mosdns
 #src-git rely https://github.com/xuanranran/rely
 #src-git xuanranran https://github.com/xuanranran/openwrt-packages
