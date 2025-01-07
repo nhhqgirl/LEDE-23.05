@@ -10,8 +10,11 @@
 # Description: OpenWrt DIY script part 1 (Before Update feeds)
 #
 
-# rm -rf feeds/luci/applications/luci-app-mosdns 
-# rm -rf feeds/packages/net/mosdns
+rm -rf feeds/packages/lang/golang
+git clone https://github.com/sbwml/packages_lang_golang -b 23.x feeds/packages/lang/golang
+
+rm -rf feeds/luci/applications/luci-app-mosdns 
+rm -rf feeds/packages/net/mosdns
 
 
 # 添加 Openclash 插件
@@ -26,8 +29,9 @@ rm -f package/openclash.zip
 git clone https://github.com/nhhqgirl/luci-app-onliner.git package/lean/luci-app-onliner
 
 # 添加 mosdns 插件
-# git clone https://github.com/nhhqgirl/luci-app-mosdns.git package/lean/luci-app-mosdns
-# git clone https://github.com/nhhqgirl/v2dat.git package/lean/v2dat
+git clone https://github.com/nhhqgirl/luci-app-mosdns.git package/lean/luci-app-mosdns
+git clone https://github.com/nhhqgirl/mosdns.git package/lean/mosdns
+git clone https://github.com/nhhqgirl/v2dat.git package/lean/v2dat
 
 
 # 添加 PowerOff 插件
