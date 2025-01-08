@@ -12,8 +12,10 @@
 rm -rf feeds/packages/lang/golang
 git clone https://github.com/sbwml/packages_lang_golang -b 23.x feeds/packages/lang/golang
 
-# rm -rf feeds/luci/applications/luci-app-mosdns 
-# rm -rf feeds/packages/net/mosdns
+rm -rf feeds/luci/applications/luci-app-mosdns 
+rm -rf feeds/packages/net/mosdns
+rm -rf feeds/packages/net/v2dat
+rm -rf feeds/packages/net/v2ray-geodata
 
 # 修改网络设置
 sed -i 's/192.168.1.1/192.168.81.1/g' package/base-files/files/bin/config_generate
