@@ -1,84 +1,30 @@
-#!/bin/bash
-#
-# Copyright (c) 2019-2020 P3TERX <https://p3terx.com>
-#
-# This is free software, licensed under the MIT License.
-# See /LICENSE for more information.
-#
-# https://github.com/P3TERX/Actions-OpenWrt
-# File name: diy-part1.sh
-# Description: OpenWrt DIY script part 1 (Before Update feeds)
-#
+# Clone community packages to package/community
+mkdir package/community
+pushd package/community
 
-# 移除旧包
-rm -rf feeds/packages/net/mosdns
-rm -rf feeds/luci/applications/luci-app-mosdns
-rm -rf feeds/luci/applications/luci-app-dockerman
-
-
-
-
-# 添加 Openclash 插件
-rm -rf feeds/rely/luci-app-openclash
-rm -rf feeds/xuanranran/luci-app-openclash
-rm -rf feeds/luci/applications/luci-app-openclash
-wget -O package/openclash.zip https://codeload.github.com/vernesong/OpenClash/zip/refs/heads/master
-unzip -d package/openclash package/openclash.zip
-cp -r package/openclash/OpenClash-master/luci-app-openclash package/luci-app-openclash
-rm -rf package/openclash package/openclash.zip
-
-# 添加 PowerOff 插件
-# rm -rf feeds/xuanranran/luci-app-poweroff
-# git clone https://github.com/nhyoungboy/luci-app-poweroff.git package/luci-app-poweroff
-
-# unzip
-rm -rf feeds/packages/utils/unzip
-git clone https://github.com/sbwml/feeds_packages_utils_unzip feeds/packages/utils/unzip
-
-# Update GCC 13.3.0
-rm -rf toolchain/gcc/*
-pushd toolchain/gcc/
-git clone --depth 1 https://github.com/immortalwrt/immortalwrt gcc && mv -n gcc/toolchain/gcc/* ./ ; rm -rf gcc
+# Add openwrt-packages
+git clone --depth=1 https://github.com/xuanranran/openwrt-package openwrt-package
+git clone --depth=1 https://github.com/xuanranran/rely openwrt-rely
+git clone --depth=1 https://github.com/immortalwrt/wwan-packages wwan-packages
+chmod 755 openwrt-package/luci-app-onliner/root/usr/share/onliner/setnlbw.sh
 popd
 
-# samba4 - bump version
-rm -rf feeds/packages/net/samba4
-git clone https://github.com/sbwml/feeds_packages_net_samba4 feeds/packages/net/samba4
-sed -i 's/ftp.gwdg.de/download.samba.org/g' feeds/packages/net/samba4/Makefile
+# fix sysupgrade
+rm -rf package/base-files/files/sbin/sysupgrade
+cp -f $GITHUB_WORKSPACE/data/sysupgrade package/base-files/files/sbin/sysupgrade
+chmod 755 package/base-files/files/sbin/sysupgrade
 
-# liburing - 2.7 (samba-4.21.0)
-rm -rf feeds/packages/libs/liburing
-git clone https://github.com/sbwml/feeds_packages_libs_liburing feeds/packages/libs/liburing
-# enable multi-channel
-sed -i '/workgroup/a \\n\t## enable multi-channel' feeds/packages/net/samba4/files/smb.conf.template
-sed -i '/enable multi-channel/a \\tserver multi channel support = yes' feeds/packages/net/samba4/files/smb.conf.template
-# default config
-sed -i 's/#aio read size = 0/aio read size = 0/g' feeds/packages/net/samba4/files/smb.conf.template
-sed -i 's/#aio write size = 0/aio write size = 0/g' feeds/packages/net/samba4/files/smb.conf.template
-sed -i 's/invalid users = root/#invalid users = root/g' feeds/packages/net/samba4/files/smb.conf.template
-sed -i 's/bind interfaces only = yes/bind interfaces only = no/g' feeds/packages/net/samba4/files/smb.conf.template
-sed -i 's/#create mask/create mask/g' feeds/packages/net/samba4/files/smb.conf.template
-sed -i 's/#directory mask/directory mask/g' feeds/packages/net/samba4/files/smb.conf.template
-sed -i 's/0666/0644/g;s/0744/0755/g;s/0777/0755/g' feeds/luci/applications/luci-app-samba4/htdocs/luci-static/resources/view/samba4.js
-sed -i 's/0666/0644/g;s/0777/0755/g' feeds/packages/net/samba4/files/samba.config
-sed -i 's/0666/0644/g;s/0777/0755/g' feeds/packages/net/samba4/files/smb.conf.template
+# Change default shell to zsh
+sed -i 's/\/bin\/ash/\/usr\/bin\/zsh/g' package/base-files/files/etc/passwd
 
-# Update node 20.x
-rm -rf feeds/packages/lang/node
-git clone https://github.com/sbwml/feeds_packages_lang_node-prebuilt feeds/packages/lang/node
+# Modify default IP
+sed -i 's/192.168.1.1/192.168.81.1/g' package/base-files/files/bin/config_generate
 
-# Update node-yarn
-rm -rf feeds/packages/lang/node-yarn/*
-pushd feeds/packages/lang/node-yarn/
-git clone --depth 1 https://github.com/immortalwrt/packages immortalwrt && mv -n immortalwrt/lang/node-yarn/* ./ ; rm -rf immortalwrt
-popd
+# 修改开源站地址
+# sed -i '/@OPENWRT/a\\t\t"https://source.cooluc.com",' scripts/projectsmirrors.json
 
-# Update golang 1.23.x
-rm -rf feeds/packages/lang/golang/golang
-git clone https://github.com/sbwml/packages_lang_golang feeds/packages/lang/golang/golang
- 
+sed -i 's/services/network/g' customfeeds/luci/applications/luci-app-upnp/root/usr/share/luci/menu.d/luci-app-upnp.json
 
-
-
-
-
+# Test kernel 6.6
+rm -rf target/linux/x86/base-files/etc/board.d/02_network
+cp -f $GITHUB_WORKSPACE/data/02_network target/linux/x86/base-files/etc/board.d/02_network
