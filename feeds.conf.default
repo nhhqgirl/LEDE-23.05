@@ -5,5 +5,5 @@ src-git routing https://github.com/coolsnowwolf/routing
 src-git telephony https://git.openwrt.org/feed/telephony.git
 #src-git rely https://github.com/xuanranran/rely
 #src-git xuanranran https://github.com/xuanranran/openwrt-packages
-src-git OpenClash https://github.com/vernesong/OpenClash
-src-git mosdns https://github.com/sbwml/luci-app-mosdns
+src-git vernesong https://github.com/vernesong/OpenClash
+src-git sbwml https://github.com/sbwml/luci-app-mosdns
