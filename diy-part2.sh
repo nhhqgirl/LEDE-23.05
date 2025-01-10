@@ -12,8 +12,6 @@
 
 rm -rf feeds/luci/applications/luci-app-mosdns 
 rm -rf feeds/packages/net/mosdns
-rm -rf feeds/packages/net/v2dat
-rm -rf feeds/packages/net/v2ray-geodata
 rm -rf feeds/luci/applications/luci-app-openclash
 
 # 修改网络设置
