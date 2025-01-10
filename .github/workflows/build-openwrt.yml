@@ -166,7 +166,7 @@ jobs:
         echo "release_tag=$(date +"%Y.%m.%d-%H%M")" >> $GITHUB_OUTPUT
         touch release.txt
         echo "* 仅编译x86-64-generic-squashfs-combined-efi固件" > release.txt
-        echo "* 默认管理 IP：192.168.123.1 默认密码：password" >> release.txt
+        echo "* 默认管理 IP：192.168.81.1 默认密码：password" >> release.txt
         echo "status=success" >> $GITHUB_OUTPUT
 
     - name: Upload firmware to release
