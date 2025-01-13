@@ -1,4 +1,4 @@
-# OpenWrt MINI
+# LEDE MINI
 
 ## 项目说明
 - 自用的
