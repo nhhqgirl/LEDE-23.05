@@ -1,4 +1,4 @@
-# OpenWrt x86_64
+# OpenWrt MINI
 
 ## 项目说明
 - 自用的
